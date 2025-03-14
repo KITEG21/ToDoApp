@@ -1,3 +1,5 @@
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Json.Serialization;
 using FastEndpoints;
@@ -26,18 +28,6 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
-
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddFastEndpoints();
-builder.Services.AddValidatorsFromAssemblyContaining<TaskValidator>();
-builder.Services.AddValidatorsFromAssemblyContaining<TaskStateValidator>();
-
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"),
-    b => b.MigrationsAssembly("TodoApp.Api"))
-);
-
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var key = Encoding.UTF8.GetBytes("ThisIsMySuperDeluxeDuperAmazingCuteUltraSecretKey");
 
@@ -56,15 +46,28 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,
         ValidIssuer = jwtSettings["Issuer"],
         ValidAudience = jwtSettings["Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(key)
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        RoleClaimType = JwtRegisteredClaimNames.Jti //To register the type of Role
     };
 });
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddAuthorization();
+builder.Services.AddFastEndpoints();
+builder.Services.AddValidatorsFromAssemblyContaining<TaskValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<TaskStateValidator>();
+
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"),
+    b => b.MigrationsAssembly("TodoApp.Api"))
+);
 
 
 builder.Services.AddScoped<ITaskServices, TaskServices>();
 builder.Services.AddScoped<ITaskRepositories, TaskRepositories>();
 builder.Services.AddScoped<TaskMapper>();
-builder.Services.AddScoped<TokenServices>();
+builder.Services.AddScoped<ITokenServices, TokenServices>();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
@@ -77,9 +80,9 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 var app = builder.Build();
 
 app.UseHttpsRedirection();
-app.UseFastEndpoints();
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseFastEndpoints();
 
 app.Run();
 

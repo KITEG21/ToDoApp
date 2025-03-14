@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X4ltWkxa5+w=",
+  "dgSpecHash": "tlRALX2K9QI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Usuario\\Documents\\Backend\\API\\TodoApp\\TodoApp.Api\\TodoApp.Api.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Documents\\Backend\\API\\TodoApp\\todoapp.api\\TodoApp.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\fastendpoints\\5.34.0\\fastendpoints.5.34.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\fastendpoints.attributes\\5.34.0\\fastendpoints.attributes.5.34.0.nupkg.sha512",
@@ -46,7 +46,7 @@
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.options\\9.0.2\\microsoft.extensions.options.9.0.2.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.2\\microsoft.extensions.primitives.9.0.2.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.6.1\\microsoft.identitymodel.abstractions.8.6.1.nupkg.sha512",
-    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.0.3\\microsoft.identitymodel.jsonwebtokens.7.0.3.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.6.1\\microsoft.identitymodel.jsonwebtokens.8.6.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.identitymodel.logging\\8.6.1\\microsoft.identitymodel.logging.8.6.1.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.identitymodel.protocols\\7.0.3\\microsoft.identitymodel.protocols.7.0.3.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.0.3\\microsoft.identitymodel.protocols.openidconnect.7.0.3.nupkg.sha512",

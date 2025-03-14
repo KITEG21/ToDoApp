@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FastEndpoints;
 using Microsoft.EntityFrameworkCore;
+using TodoApp.Application.Interfaces;
 using TodoApp.Application.Services;
 using TodoApp.Domain.Models;
 using TodoApp.Domain.Models.Auth;
@@ -11,11 +12,11 @@ using TodoApp.Infrastructure.Database;
 
 namespace TodoApp.Api.Endpoints.Auth;
 
-public class SignUpEndpoint : Endpoint<RegisterRequest>
+public class SignUpEndpoint : Endpoint<RegisterRequest, RegisterResponse>
 {
     private readonly AppDbContext _context;
-    private readonly TokenServices _tokenServices;
-    public SignUpEndpoint(AppDbContext context, TokenServices tokenServices)
+    private readonly ITokenServices _tokenServices;
+    public SignUpEndpoint(AppDbContext context, ITokenServices tokenServices)
     {
         _context = context;
         _tokenServices = tokenServices;
@@ -36,7 +37,7 @@ public class SignUpEndpoint : Endpoint<RegisterRequest>
                 StatusCode = 409,
                 Errors = "User already exist"
             };
-            await SendAsync(errorResponse, 409, ct);
+            //await SendAsync(errorResponse, 409, ct);
             return;
         }
 
@@ -48,6 +49,7 @@ public class SignUpEndpoint : Endpoint<RegisterRequest>
         };
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
-        await SendAsync(user);
+        var token = _tokenServices.GenerateToken(user.Username, user.Id, "User");
+        await SendAsync(new RegisterResponse{Token = token}, cancellation:ct);
     }
 }

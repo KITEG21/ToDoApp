@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\Documents\\Backend\\API\\TodoApp\\TodoApp.Api\\TodoApp.Api.csproj": {}
+    "C:\\Users\\Usuario\\Documents\\Backend\\API\\TodoApp\\todoapp.api\\TodoApp.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\Documents\\Backend\\API\\TodoApp\\TodoApp.Api\\TodoApp.Api.csproj": {
+    "C:\\Users\\Usuario\\Documents\\Backend\\API\\TodoApp\\todoapp.api\\TodoApp.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\Documents\\Backend\\API\\TodoApp\\TodoApp.Api\\TodoApp.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Documents\\Backend\\API\\TodoApp\\todoapp.api\\TodoApp.Api.csproj",
         "projectName": "TodoApp.Api",
-        "projectPath": "C:\\Users\\Usuario\\Documents\\Backend\\API\\TodoApp\\TodoApp.Api\\TodoApp.Api.csproj",
+        "projectPath": "C:\\Users\\Usuario\\Documents\\Backend\\API\\TodoApp\\todoapp.api\\TodoApp.Api.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Documents\\Backend\\API\\TodoApp\\TodoApp.Api\\obj\\",
+        "outputPath": "C:\\Users\\Usuario\\Documents\\Backend\\API\\TodoApp\\todoapp.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -79,6 +79,10 @@
             "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
               "version": "[9.0.2, )"
+            },
+            "Microsoft.IdentityModel.JsonWebTokens": {
+              "target": "Package",
+              "version": "[8.6.1, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
@@ -180,6 +184,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.IdentityModel.JsonWebTokens": {
+              "target": "Package",
+              "version": "[8.6.1, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",

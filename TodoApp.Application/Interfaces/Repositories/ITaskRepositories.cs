@@ -10,9 +10,9 @@ namespace TodoApp.Application.Interfaces.Repositories;
 public interface ITaskRepositories
 {
   public Task<TaskModel> CreateTask(TaskDto req);
-  public Task<List<TaskModel>?> GetAllTasks();
-  public Task<TaskModel?> GetTask(int id);
-  public Task<TaskModel?> UpdateTaskContent(int id, string content); 
-  public Task<TaskModel?> UpdateTaskState(int id, ETaskState status);
-  public Task<bool> DeleteTask(int id);
+  public Task<List<TaskModel>?> GetAllTasks(int userId);
+  public Task<TaskModel?> GetTask(int id, int userId);
+  public Task<TaskModel?> UpdateTaskContent(int id, string content, int userId); 
+  public Task<TaskModel?> UpdateTaskState(int id, ETaskState status, int userId);
+  public Task<bool> DeleteTask(int id, int userId);
 }

@@ -171,3 +171,4 @@ C:\Users\Usuario\Documents\Backend\API\TodoApp\todoapp.api\bin\Debug\net8.0\Seri
 C:\Users\Usuario\Documents\Backend\API\TodoApp\todoapp.api\bin\Debug\net8.0\Serilog.Sinks.Console.dll
 C:\Users\Usuario\Documents\Backend\API\TodoApp\todoapp.api\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 C:\Users\Usuario\Documents\Backend\API\TodoApp\todoapp.api\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\Users\Usuario\Documents\Backend\API\TodoApp\todoapp.api\obj\Debug\net8.0\TodoApp.Api.sourcelink.json

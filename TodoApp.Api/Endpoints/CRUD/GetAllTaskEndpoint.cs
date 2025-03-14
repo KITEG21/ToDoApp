@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using FastEndpoints;
 using TodoApp.Application.Interfaces;
@@ -22,12 +23,21 @@ public class GetAllTaskEndpoint : EndpointWithoutRequest<List<TaskModel>>
     
    public override void Configure(){
         Get("/api/getTasks");
-        AllowAnonymous();
+        Roles("User");
     }
 
     public override async Task HandleAsync(CancellationToken ct)
     {
-        var task = await _taskServices.GetAllTasks();
+        var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+        if(userIdClaim == null){
+            await SendUnauthorizedAsync(ct);
+            return;
+        }
+
+        int userId = int.Parse(userIdClaim.Value);
+
+
+        var task = await _taskServices.GetAllTasks(userId);
         await SendAsync(task);
 
     }

@@ -32,9 +32,9 @@ public class TaskRepositories : ITaskRepositories
         return newTask;
 
     }
-    public async Task<bool> DeleteTask(int id)
+    public async Task<bool> DeleteTask(int id, int userId)
     {
-      var taskToDelete = await _context.Tasks.FirstOrDefaultAsync(x => x.Id == id);
+      var taskToDelete = await _context.Tasks.FirstOrDefaultAsync(x => x.Id == id && x.UserId == userId);
       if(taskToDelete == null){
         return false;
       }
@@ -43,9 +43,9 @@ public class TaskRepositories : ITaskRepositories
       await _context.SaveChangesAsync();
       return true;
     }
-    public async Task<List<TaskModel>?> GetAllTasks(){
+    public async Task<List<TaskModel>?> GetAllTasks(int userId){
 
-        var tasks = await _context.Tasks.ToListAsync();
+        var tasks = await _context.Tasks.Where(x => x.UserId == userId).ToListAsync();
         
         if(tasks == null){
             return null;
@@ -53,20 +53,18 @@ public class TaskRepositories : ITaskRepositories
 
         return tasks;
     }
-    public async Task<TaskModel?> GetTask(int id)
+    public async Task<TaskModel?> GetTask(int id, int userId)
     {
-        var task = await _context.Tasks.FirstOrDefaultAsync(x => x.Id == id);
-
+        var task = await _context.Tasks.FirstOrDefaultAsync(x => x.Id == id && x.UserId == userId);
         if(task == null){
             return null;
         }
-
         return task;
 
     }
-    public async Task<TaskModel?> UpdateTaskContent(int id, string content)
+    public async Task<TaskModel?> UpdateTaskContent(int id, string content, int userId)
     {
-        TaskModel? taskToUpdate = await _context.Tasks.FirstOrDefaultAsync(x => x.Id == id);
+        TaskModel? taskToUpdate = await _context.Tasks.FirstOrDefaultAsync(x => x.Id == id && x.UserId == userId);
         
         if(taskToUpdate == null){
             return null; 
@@ -77,9 +75,9 @@ public class TaskRepositories : ITaskRepositories
         return taskToUpdate;
         
     }
-    public async Task<TaskModel?> UpdateTaskState(int id, ETaskState status)
+    public async Task<TaskModel?> UpdateTaskState(int id, ETaskState status, int userId)
     {
-        TaskModel? taskToUpdate = await _context.Tasks.FirstOrDefaultAsync(x => x.Id == id);
+        TaskModel? taskToUpdate = await _context.Tasks.FirstOrDefaultAsync(x => x.Id == id && x.UserId == userId);
 
         if(taskToUpdate == null){
             return null;

@@ -26,9 +26,9 @@ public class TaskServices : ITaskServices
         return newTask;
     }
 
-    public async Task<bool> DeleteTask(int id)
+    public async Task<bool> DeleteTask(int id, int userId)
     {
-        bool success = await _taskRepositories.DeleteTask(id);
+        bool success = await _taskRepositories.DeleteTask(id, userId);
         if(!success){
             Log.Information("Failed to delete task");
             return false;
@@ -38,9 +38,9 @@ public class TaskServices : ITaskServices
         return true;
     }
 
-    public async Task<List<TaskModel>?> GetAllTasks()
+    public async Task<List<TaskModel>?> GetAllTasks(int userId)
     {
-        var tasks = await _taskRepositories.GetAllTasks();
+        var tasks = await _taskRepositories.GetAllTasks(userId);
         if(tasks == null)
         {
           Log.Information("No task were found");
@@ -50,9 +50,9 @@ public class TaskServices : ITaskServices
         return tasks;
     }
 
-    public async Task<TaskModel?> GetTask(int id)
+    public async Task<TaskModel?> GetTask(int id, int userId)
     {
-       var task = await _taskRepositories.GetTask(id);
+       var task = await _taskRepositories.GetTask(id, userId);
         if(task == null)
         {
           Log.Information("Requested task doesn't exists");
@@ -62,9 +62,9 @@ public class TaskServices : ITaskServices
         return task;
     }
 
-    public async Task<TaskModel?> UpdateTaskContent(int id, string content)
+    public async Task<TaskModel?> UpdateTaskContent(int id, string content, int userId)
     {
-        var task = await _taskRepositories.UpdateTaskContent(id, content);
+        var task = await _taskRepositories.UpdateTaskContent(id, content, userId);
         if(task == null)
         {
           Log.Information("Requested task doesn't exists");
@@ -74,9 +74,9 @@ public class TaskServices : ITaskServices
         return task;
     }
 
-    public async Task<TaskModel?> UpdateTaskState(int id, ETaskState status)
+    public async Task<TaskModel?> UpdateTaskState(int id, ETaskState status, int userId)
     {
-        var task = await _taskRepositories.UpdateTaskState(id, status);
+        var task = await _taskRepositories.UpdateTaskState(id, status, userId);
         if(task == null)
         {
           Log.Information("Requested task doesn't exists");

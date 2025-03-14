@@ -13,3 +13,4 @@ C:\Users\Usuario\Documents\Backend\API\TodoApp\TodoApp.Application\obj\Debug\net
 C:\Users\Usuario\Documents\Backend\API\TodoApp\TodoApp.Application\obj\Debug\net8.0\refint\TodoApp.Application.dll
 C:\Users\Usuario\Documents\Backend\API\TodoApp\TodoApp.Application\obj\Debug\net8.0\TodoApp.Application.pdb
 C:\Users\Usuario\Documents\Backend\API\TodoApp\TodoApp.Application\obj\Debug\net8.0\ref\TodoApp.Application.dll
+C:\Users\Usuario\Documents\Backend\API\TodoApp\TodoApp.Application\obj\Debug\net8.0\TodoApp.Application.sourcelink.json

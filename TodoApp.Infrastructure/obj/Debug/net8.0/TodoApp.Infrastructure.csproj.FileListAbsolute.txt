@@ -15,3 +15,4 @@ C:\Users\Usuario\Documents\Backend\API\TodoApp\TodoApp.Infrastructure\obj\Debug\
 C:\Users\Usuario\Documents\Backend\API\TodoApp\TodoApp.Infrastructure\obj\Debug\net8.0\ref\TodoApp.Infrastructure.dll
 C:\Users\Usuario\Documents\Backend\API\TodoApp\TodoApp.Infrastructure\bin\Debug\net8.0\TodoApp.Application.dll
 C:\Users\Usuario\Documents\Backend\API\TodoApp\TodoApp.Infrastructure\bin\Debug\net8.0\TodoApp.Application.pdb
+C:\Users\Usuario\Documents\Backend\API\TodoApp\TodoApp.Infrastructure\obj\Debug\net8.0\TodoApp.Infrastructure.sourcelink.json

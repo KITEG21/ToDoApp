@@ -14,7 +14,6 @@ using TodoApp.Infrastructure.Database;
 
 namespace TodoApp.Api.Endpoints.CRUD;
 
-[Authorize]
 public class AddTaskEndpoint : Endpoint<TaskDto, object>
 {
     private readonly ITaskServices _taskServices;
@@ -25,7 +24,8 @@ public class AddTaskEndpoint : Endpoint<TaskDto, object>
 
     public override void Configure(){
         Post("/api/addTask");
-        AllowAnonymous();
+        Roles("User");
+        
     }
 
     public override async Task HandleAsync(TaskDto req, CancellationToken ct)
@@ -41,14 +41,14 @@ public class AddTaskEndpoint : Endpoint<TaskDto, object>
             await SendAsync(ErrorResponse, 400, ct);
             return;
         }
-        // var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
-        // if(userIdClaim == null){
-        //     await SendUnauthorizedAsync(ct);
-        //     return;
-        // }
+        var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+        if(userIdClaim == null){
+            await SendUnauthorizedAsync(ct);
+            return;
+        }
 
-        // int userId = int.Parse(userIdClaim.Value);
-        // req.UserId = userId;
+        int userId = int.Parse(userIdClaim.Value);
+        req.UserId = userId;
 
         TaskModel newTask = await _taskServices.CreateTask(req);
         newTask.TaskState = ETaskState.Pending;
