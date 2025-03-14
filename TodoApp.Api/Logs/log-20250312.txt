@@ -1,0 +1,39 @@
+2025-03-12 15:32:09.619 -04:00 [INF] Registered 8 endpoints in 152 milliseconds.
+2025-03-12 15:32:09.655 -04:00 [INF] User profile is available. Using 'C:\Users\Usuario\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-12 15:32:09.690 -04:00 [INF] Now listening on: http://localhost:5041
+2025-03-12 15:32:09.691 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-12 15:32:09.692 -04:00 [INF] Hosting environment: Development
+2025-03-12 15:32:09.692 -04:00 [INF] Content root path: C:\Users\Usuario\Documents\Backend\API\TodoApp\todoapp.api
+2025-03-12 15:32:17.627 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/api/task/90 - null null
+2025-03-12 15:32:17.650 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-03-12 15:32:17.722 -04:00 [INF] Executing endpoint 'HTTP: GET api/task/{id}'
+2025-03-12 15:32:18.289 -04:00 [INF] Executed DbCommand (26ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Content", t."CreatedDate", t."DayToDo", t."HourToDo", t."TaskState", t."Title", t."UserId", t."UserModelId"
+FROM "Tasks" AS t
+WHERE t."Id" = @__id_0
+LIMIT 1
+2025-03-12 15:32:18.302 -04:00 [INF] Requested task doesn't exists
+2025-03-12 15:32:18.327 -04:00 [INF] Executed endpoint 'HTTP: GET api/task/{id}'
+2025-03-12 15:32:18.390 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/api/task/90 - 200 null application/json; charset=utf-8 712.0496ms
+2025-03-12 15:32:28.761 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/api/task/1 - null null
+2025-03-12 15:32:28.765 -04:00 [INF] Executing endpoint 'HTTP: GET api/task/{id}'
+2025-03-12 15:32:28.780 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Content", t."CreatedDate", t."DayToDo", t."HourToDo", t."TaskState", t."Title", t."UserId", t."UserModelId"
+FROM "Tasks" AS t
+WHERE t."Id" = @__id_0
+LIMIT 1
+2025-03-12 15:32:28.782 -04:00 [INF] Requested task doesn't exists
+2025-03-12 15:32:28.783 -04:00 [INF] Executed endpoint 'HTTP: GET api/task/{id}'
+2025-03-12 15:32:28.784 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/api/task/1 - 200 null application/json; charset=utf-8 23.7415ms
+2025-03-12 15:32:34.183 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/api/task/26 - null null
+2025-03-12 15:32:34.187 -04:00 [INF] Executing endpoint 'HTTP: GET api/task/{id}'
+2025-03-12 15:32:34.225 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."Content", t."CreatedDate", t."DayToDo", t."HourToDo", t."TaskState", t."Title", t."UserId", t."UserModelId"
+FROM "Tasks" AS t
+WHERE t."Id" = @__id_0
+LIMIT 1
+2025-03-12 15:32:34.263 -04:00 [INF] Task with ID: 26 found
+2025-03-12 15:32:34.281 -04:00 [INF] Executed endpoint 'HTTP: GET api/task/{id}'
+2025-03-12 15:32:34.282 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/api/task/26 - 200 null application/json; charset=utf-8 99.3461ms
+2025-03-12 15:32:39.380 -04:00 [INF] Application is shutting down...
+2025-03-12 15:33:45.146 -04:00 [INF] Registered 8 endpoints in 140 milliseconds.

@@ -1,0 +1,9 @@
+2025-03-12 15:34:23.754 -04:00 [INF] Registered 8 endpoints in 140 milliseconds.
+2025-03-12 15:35:40.109 -04:00 [INF] Registered 8 endpoints in 162 milliseconds.
+2025-03-12 15:35:48.767 -04:00 [INF] User profile is available. Using 'C:\Users\Usuario\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-12 15:35:48.805 -04:00 [INF] Now listening on: http://localhost:5041
+2025-03-12 15:35:48.806 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-12 15:35:48.807 -04:00 [INF] Hosting environment: Development
+2025-03-12 15:35:48.807 -04:00 [INF] Content root path: C:\Users\Usuario\Documents\Backend\API\TodoApp\todoapp.api
+2025-03-12 15:35:51.745 -04:00 [INF] Application is shutting down...
+2025-03-12 15:36:04.967 -04:00 [INF] Registered 8 endpoints in 134 milliseconds.

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uSSwy/WM+i0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Usuario\\Documents\\Backend\\API\\TodoApp\\TodoApp.Domain\\TodoApp.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512"
+  ],
+  "logs": []
+}

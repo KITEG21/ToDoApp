@@ -1,0 +1,2 @@
+2025-03-12 15:33:45.146 -04:00 [INF] Registered 8 endpoints in 140 milliseconds.
+2025-03-12 15:34:23.754 -04:00 [INF] Registered 8 endpoints in 140 milliseconds.
