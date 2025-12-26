@@ -22,14 +22,14 @@ public class GetTaskEndpoint : Endpoint<TaskModel>
     {
         Get("api/task/{id}");
         Roles("User");
+        Description(x => x.WithTags("Task"));
     }
 
     public override async Task HandleAsync(TaskModel _task, CancellationToken ct)
     {
         var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
         if(userIdClaim == null){
-            await SendUnauthorizedAsync(ct);
-            return;
+            ThrowError("Unauthorized", 401);
         }
         int userId = int.Parse(userIdClaim.Value);
 
@@ -38,17 +38,9 @@ public class GetTaskEndpoint : Endpoint<TaskModel>
 
         if(task == null)
         {
-            var ErrorResponse = new{
-                Error = 404,
-                Message = "The requested task doesn't exist"
-            };
-
-           await SendAsync(ErrorResponse);
-           return;
+            ThrowError("The requested task doesn't exist", 404);
         }
 
         await SendAsync(task);
-        return;
-    
     }
 }

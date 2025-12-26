@@ -19,8 +19,9 @@ public class UpdateTaskStateEndpoint: Endpoint<TaskStateDto>
     }
     public override void Configure()
     {
-        Put("api/updateState/{id}");
+        Patch("api/task/{id}");
         Roles("User");
+        Description(x => x.WithTags("Task"));
     }
     public override async Task HandleAsync(TaskStateDto req, CancellationToken ct)
     {
@@ -37,8 +38,7 @@ public class UpdateTaskStateEndpoint: Endpoint<TaskStateDto>
         
         var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
         if(userIdClaim == null){
-            await SendUnauthorizedAsync(ct);
-            return;
+            ThrowError("Unauthorized", 401);
         }
 
         int userId = int.Parse(userIdClaim.Value);
@@ -46,16 +46,10 @@ public class UpdateTaskStateEndpoint: Endpoint<TaskStateDto>
         var task = await _taskServices.UpdateTaskState(id, req.TaskState, userId);
         if(task == null)
         {
-            var ErrorResponse = new{
-                Error = 404,
-                Message = "The requested task doesn't exist"
-            };
-            await SendAsync(ErrorResponse, 404, ct);
-            return;
+            ThrowError("The requested task doesn't exist", 404);
         }
 
         await SendAsync(task);
-        return;
     }
 
 }

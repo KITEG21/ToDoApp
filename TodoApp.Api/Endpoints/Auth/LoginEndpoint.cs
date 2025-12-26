@@ -27,6 +27,7 @@ public class LoginEndpoint : Endpoint<LoginRequest>
     {
       Post("/api/auth/login");
       AllowAnonymous();
+      Description(x => x.WithTags("Authentication"));
     }
 
     public override async Task HandleAsync(LoginRequest request, CancellationToken ct)
@@ -35,19 +36,11 @@ public class LoginEndpoint : Endpoint<LoginRequest>
         
         if (user == null)
         {
-          var ErrorResponse = new
-          {
-            Code = 401, 
-            Error = "Invalid credentials"
-          };  
-          await SendAsync(ErrorResponse);
-          return;
+          ThrowError("Invalid credentials", 401);
         }
 
         var token = _tokenServices.GenerateToken(user.Username, user.Id, "User");
         await SendAsync(new LoginResponse{Token = token}, cancellation:ct);
-        return;
-    
     }
 
 }

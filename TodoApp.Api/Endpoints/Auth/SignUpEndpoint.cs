@@ -26,19 +26,15 @@ public class SignUpEndpoint : Endpoint<RegisterRequest, RegisterResponse>
     {
         Post("api/auth/signup");
         AllowAnonymous();
+        Description(x => x.WithTags("Authentication"));
+
     }
 
     public override async Task HandleAsync(RegisterRequest req, CancellationToken ct)
     {
         if(await _context.Users.AnyAsync(x => x.Username == req.Username || x.Email == req.Email))
         {
-            var errorResponse = new
-            {
-                StatusCode = 409,
-                Errors = "User already exist"
-            };
-            //await SendAsync(errorResponse, 409, ct);
-            return;
+            ThrowError("Credentials not available", 409);
         }
 
         var user = new UserModel

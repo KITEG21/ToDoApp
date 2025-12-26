@@ -22,24 +22,26 @@ public class GetAllTaskEndpoint : EndpointWithoutRequest<List<TaskModel>>
     }
     
    public override void Configure(){
-        Get("/api/getTasks");
+        Get("/api/tasks");
         Roles("User");
+        Description(x => x.WithTags("Task"));
     }
 
     public override async Task HandleAsync(CancellationToken ct)
     {
         var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
         if(userIdClaim == null){
-            await SendUnauthorizedAsync(ct);
-            return;
+            ThrowError("Unauthorized", 401);
         }
 
         int userId = int.Parse(userIdClaim.Value);
 
-
         var task = await _taskServices.GetAllTasks(userId);
+        if(task == null)
+        {
+            ThrowError("No tasks found", 404);
+        }
         await SendAsync(task);
-
     }
 
 }

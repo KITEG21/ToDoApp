@@ -21,16 +21,16 @@ public class UpdateTaskContentEndpoint : Endpoint<TaskContentDto>
 
     public override void Configure()
     {
-        Put("api/updateContent/{id}");
+        Put("api/task/{id}");
         Roles("User");
+        Description(x => x.WithTags("Task"));
     }
 
     public override async Task HandleAsync(TaskContentDto req, CancellationToken ct)
     {
         var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
         if(userIdClaim == null){
-          await SendUnauthorizedAsync(ct);
-          return;
+          ThrowError("Unauthorized", 401);
         }
         int userId = int.Parse(userIdClaim.Value);
 
@@ -38,16 +38,10 @@ public class UpdateTaskContentEndpoint : Endpoint<TaskContentDto>
         var task = await _taskServices.UpdateTaskContent(id, req.Content, userId);
         if(task == null)
         {
-            var ErrorResponse = new{
-                Error = 404,
-                Message = "The requested task doens't exist"
-            };
-            await SendAsync(ErrorResponse, 404, ct);
-            return;
+            ThrowError("The requested task doesn't exist", 404);
         }
 
         await SendAsync(task);
-        return;
     }
 
 

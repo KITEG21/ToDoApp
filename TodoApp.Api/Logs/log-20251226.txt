@@ -1,0 +1,197 @@
+2025-12-26 13:50:04.458 -05:00 [INF] Registered 8 endpoints in 279 milliseconds.
+2025-12-26 13:50:04.524 -05:00 [INF] User profile is available. Using 'C:\Users\Usuario\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-26 13:50:04.610 -05:00 [INF] Now listening on: http://localhost:5041
+2025-12-26 13:50:04.611 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-26 13:50:04.611 -05:00 [INF] Hosting environment: Development
+2025-12-26 13:50:04.612 -05:00 [INF] Content root path: C:\Users\Usuario\ToDoApp\todoapp.api
+2025-12-26 13:50:05.827 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/ - null null
+2025-12-26 13:50:05.849 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-12-26 13:50:05.874 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/ - 404 0 null 47.8231ms
+2025-12-26 13:50:05.879 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5041/, Response status code: 404
+2025-12-26 13:50:09.025 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar - null null
+2025-12-26 13:50:09.029 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+HTTP: GET /scalar/{documentName?}
+HTTP: GET /scalar/{documentName?}
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-12-26 13:50:09.047 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar - 500 null text/html; charset=utf-8 22.9698ms
+2025-12-26 13:50:09.096 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/favicon.ico - null null
+2025-12-26 13:50:09.098 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/favicon.ico - 404 0 null 2.5632ms
+2025-12-26 13:50:09.100 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5041/favicon.ico, Response status code: 404
+2025-12-26 13:51:14.807 -05:00 [INF] Application is shutting down...
+2025-12-26 13:51:17.993 -05:00 [INF] Registered 8 endpoints in 149 milliseconds.
+2025-12-26 13:51:18.033 -05:00 [INF] User profile is available. Using 'C:\Users\Usuario\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-26 13:51:18.098 -05:00 [INF] Now listening on: http://localhost:5041
+2025-12-26 13:51:18.098 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-26 13:51:18.099 -05:00 [INF] Hosting environment: Development
+2025-12-26 13:51:18.100 -05:00 [INF] Content root path: C:\Users\Usuario\ToDoApp\todoapp.api
+2025-12-26 13:51:23.071 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar - null null
+2025-12-26 13:51:23.092 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-12-26 13:51:23.105 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 13:51:23.112 -05:00 [INF] Executing RedirectResult, redirecting to scalar/.
+2025-12-26 13:51:23.113 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 13:51:23.115 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar - 302 0 null 44.8675ms
+2025-12-26 13:51:23.119 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/ - null null
+2025-12-26 13:51:23.122 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 13:51:23.173 -05:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-12-26 13:51:23.174 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 13:51:23.175 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/ - 200 622 text/html 55.8536ms
+2025-12-26 13:51:23.184 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/scalar.aspnetcore.js - null null
+2025-12-26 13:51:23.184 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/scalar.js - null null
+2025-12-26 13:51:23.187 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-12-26 13:51:23.188 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-12-26 13:51:23.193 -05:00 [INF] Sending file with download name ''.
+2025-12-26 13:51:23.193 -05:00 [INF] Sending file with download name ''.
+2025-12-26 13:51:23.196 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-12-26 13:51:23.198 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 13.5377ms
+2025-12-26 13:51:23.203 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-12-26 13:51:23.204 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/scalar.js - 200 939279 text/javascript 20.0491ms
+2025-12-26 13:51:23.400 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/openapi/v1.json - null null
+2025-12-26 13:51:23.402 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/openapi/v1.json - 404 0 null 1.8546ms
+2025-12-26 13:51:23.404 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5041/openapi/v1.json, Response status code: 404
+2025-12-26 13:51:24.656 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/favicon.svg - null null
+2025-12-26 13:51:24.658 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-12-26 13:51:24.659 -05:00 [INF] Sending file with download name ''.
+2025-12-26 13:51:24.660 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-12-26 13:51:24.661 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/favicon.svg - 200 533 image/svg+xml 5.2945ms
+2025-12-26 13:51:38.743 -05:00 [INF] Application is shutting down...
+2025-12-26 13:51:40.952 -05:00 [INF] Registered 8 endpoints in 138 milliseconds.
+2025-12-26 13:51:40.997 -05:00 [INF] User profile is available. Using 'C:\Users\Usuario\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-26 13:51:41.048 -05:00 [INF] Now listening on: http://localhost:5041
+2025-12-26 13:51:41.049 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-26 13:51:41.049 -05:00 [INF] Hosting environment: Development
+2025-12-26 13:51:41.050 -05:00 [INF] Content root path: C:\Users\Usuario\ToDoApp\todoapp.api
+2025-12-26 13:51:43.546 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/ - null null
+2025-12-26 13:51:43.569 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-12-26 13:51:43.583 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 13:51:43.635 -05:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-12-26 13:51:43.638 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 13:51:43.639 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/ - 200 622 text/html 94.152ms
+2025-12-26 13:51:43.648 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/scalar.js - null null
+2025-12-26 13:51:43.648 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/scalar.aspnetcore.js - null null
+2025-12-26 13:51:43.651 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-12-26 13:51:43.653 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-12-26 13:51:43.654 -05:00 [INF] Sending file with download name ''.
+2025-12-26 13:51:43.654 -05:00 [INF] Sending file with download name ''.
+2025-12-26 13:51:43.657 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-12-26 13:51:43.658 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 10.0277ms
+2025-12-26 13:51:43.663 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-12-26 13:51:43.666 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/scalar.js - 200 939279 text/javascript 17.8294ms
+2025-12-26 13:51:43.784 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/openapi/v1.json - null null
+2025-12-26 13:51:43.786 -05:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-12-26 13:51:43.806 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/favicon.svg - null null
+2025-12-26 13:51:43.807 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-12-26 13:51:43.808 -05:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-12-26 13:51:43.808 -05:00 [INF] Sending file with download name ''.
+2025-12-26 13:51:43.809 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-12-26 13:51:43.810 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/favicon.svg - 200 533 image/svg+xml 4.0088ms
+2025-12-26 13:51:43.867 -05:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-12-26 13:51:43.868 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/openapi/v1.json - 200 null application/json;charset=utf-8 83.8879ms
+2025-12-26 13:59:12.991 -05:00 [INF] Application is shutting down...
+2025-12-26 13:59:16.098 -05:00 [INF] Registered 8 endpoints in 138 milliseconds.
+2025-12-26 13:59:16.140 -05:00 [INF] User profile is available. Using 'C:\Users\Usuario\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-26 13:59:16.188 -05:00 [INF] Now listening on: http://localhost:5041
+2025-12-26 13:59:16.188 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-26 13:59:16.189 -05:00 [INF] Hosting environment: Development
+2025-12-26 13:59:16.189 -05:00 [INF] Content root path: C:\Users\Usuario\ToDoApp\todoapp.api
+2025-12-26 13:59:19.985 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/ - null null
+2025-12-26 13:59:20.008 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-12-26 13:59:20.022 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 13:59:20.075 -05:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-12-26 13:59:20.078 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 13:59:20.082 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/ - 200 622 text/html 97.2967ms
+2025-12-26 13:59:20.103 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/scalar.aspnetcore.js - null null
+2025-12-26 13:59:20.103 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/scalar.js - null null
+2025-12-26 13:59:20.107 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-12-26 13:59:20.109 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-12-26 13:59:20.111 -05:00 [INF] Sending file with download name ''.
+2025-12-26 13:59:20.111 -05:00 [INF] Sending file with download name ''.
+2025-12-26 13:59:20.114 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-12-26 13:59:20.115 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 11.8394ms
+2025-12-26 13:59:20.120 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-12-26 13:59:20.122 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/scalar.js - 200 939279 text/javascript 18.6913ms
+2025-12-26 13:59:20.318 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/openapi/v1.json - null null
+2025-12-26 13:59:20.320 -05:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-12-26 13:59:20.332 -05:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-12-26 13:59:20.398 -05:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-12-26 13:59:20.399 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/openapi/v1.json - 200 null application/json;charset=utf-8 80.5587ms
+2025-12-26 13:59:21.012 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/favicon.svg - null null
+2025-12-26 13:59:21.014 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-12-26 13:59:21.015 -05:00 [INF] Sending file with download name ''.
+2025-12-26 13:59:21.016 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-12-26 13:59:21.017 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/favicon.svg - 200 533 image/svg+xml 5.2601ms
+2025-12-26 14:00:14.237 -05:00 [INF] Application is shutting down...
+2025-12-26 14:00:16.555 -05:00 [INF] Registered 8 endpoints in 139 milliseconds.
+2025-12-26 14:00:16.598 -05:00 [INF] User profile is available. Using 'C:\Users\Usuario\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-26 14:00:16.647 -05:00 [INF] Now listening on: http://localhost:5041
+2025-12-26 14:00:16.648 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-26 14:00:16.648 -05:00 [INF] Hosting environment: Development
+2025-12-26 14:00:16.649 -05:00 [INF] Content root path: C:\Users\Usuario\ToDoApp\todoapp.api
+2025-12-26 14:00:19.509 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/ - null null
+2025-12-26 14:00:19.532 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-12-26 14:00:19.546 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 14:00:19.601 -05:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-12-26 14:00:19.603 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 14:00:19.605 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/ - 200 622 text/html 96.8627ms
+2025-12-26 14:00:19.616 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/scalar.js - null null
+2025-12-26 14:00:19.616 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/scalar.aspnetcore.js - null null
+2025-12-26 14:00:19.619 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-12-26 14:00:19.621 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-12-26 14:00:19.623 -05:00 [INF] Sending file with download name ''.
+2025-12-26 14:00:19.623 -05:00 [INF] Sending file with download name ''.
+2025-12-26 14:00:19.627 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-12-26 14:00:19.628 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 11.9046ms
+2025-12-26 14:00:19.632 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-12-26 14:00:19.633 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/scalar.js - 200 939279 text/javascript 17.3554ms
+2025-12-26 14:00:19.709 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/openapi/v1.json - null null
+2025-12-26 14:00:19.710 -05:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-12-26 14:00:19.724 -05:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-12-26 14:00:19.726 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/favicon.svg - null null
+2025-12-26 14:00:19.728 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-12-26 14:00:19.729 -05:00 [INF] Sending file with download name ''.
+2025-12-26 14:00:19.729 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-12-26 14:00:19.730 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/favicon.svg - 200 533 image/svg+xml 3.6187ms
+2025-12-26 14:00:19.784 -05:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-12-26 14:00:19.785 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/openapi/v1.json - 200 null application/json;charset=utf-8 76.5843ms
+2025-12-26 14:01:04.987 -05:00 [INF] Application is shutting down...
+2025-12-26 14:01:07.306 -05:00 [INF] Registered 8 endpoints in 144 milliseconds.
+2025-12-26 14:01:07.331 -05:00 [ERR] The route "PUT:api/task/{id}" has 2 endpoints registered to handle requests!
+2025-12-26 14:01:21.396 -05:00 [INF] Registered 8 endpoints in 156 milliseconds.
+2025-12-26 14:01:21.446 -05:00 [INF] User profile is available. Using 'C:\Users\Usuario\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-26 14:01:21.503 -05:00 [INF] Now listening on: http://localhost:5041
+2025-12-26 14:01:21.504 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-26 14:01:21.504 -05:00 [INF] Hosting environment: Development
+2025-12-26 14:01:21.505 -05:00 [INF] Content root path: C:\Users\Usuario\ToDoApp\todoapp.api
+2025-12-26 14:01:24.308 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/ - null null
+2025-12-26 14:01:24.332 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-12-26 14:01:24.347 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 14:01:24.399 -05:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-12-26 14:01:24.401 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 14:01:24.403 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/ - 200 622 text/html 95.3118ms
+2025-12-26 14:01:24.417 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/scalar.js - null null
+2025-12-26 14:01:24.417 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/scalar.aspnetcore.js - null null
+2025-12-26 14:01:24.419 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-12-26 14:01:24.421 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-12-26 14:01:24.422 -05:00 [INF] Sending file with download name ''.
+2025-12-26 14:01:24.422 -05:00 [INF] Sending file with download name ''.
+2025-12-26 14:01:24.425 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-12-26 14:01:24.426 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 9.9074ms
+2025-12-26 14:01:24.431 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-12-26 14:01:24.432 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/scalar.js - 200 939279 text/javascript 15.3166ms
+2025-12-26 14:01:24.509 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/openapi/v1.json - null null
+2025-12-26 14:01:24.511 -05:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-12-26 14:01:24.525 -05:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-12-26 14:01:24.526 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/favicon.svg - null null
+2025-12-26 14:01:24.529 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-12-26 14:01:24.530 -05:00 [INF] Sending file with download name ''.
+2025-12-26 14:01:24.530 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2025-12-26 14:01:24.531 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/favicon.svg - 200 533 image/svg+xml 4.6782ms
+2025-12-26 14:01:24.585 -05:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-12-26 14:01:24.586 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/openapi/v1.json - 200 null application/json;charset=utf-8 77.3709ms
+2025-12-26 14:01:48.292 -05:00 [INF] Application is shutting down...

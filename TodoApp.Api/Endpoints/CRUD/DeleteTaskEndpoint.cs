@@ -20,16 +20,16 @@ private readonly ITaskServices _taskServices;
 
     public override void Configure()
     {
-        Delete("api/deleteTask/{id}");
+        Delete("api/task/{id}");
         Roles("User");
+        Description(x => x.WithTags("Task"));
     }
 
     public override async Task HandleAsync(DeleteTaskRequest req, CancellationToken ct)
     {
         var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
         if(userIdClaim == null){
-            await SendUnauthorizedAsync(ct);
-            return;
+            ThrowError("Unauthorized", 401);
         }
 
         int userId = int.Parse(userIdClaim.Value);
@@ -37,16 +37,10 @@ private readonly ITaskServices _taskServices;
         bool success = await _taskServices.DeleteTask(id, userId);
         
         if(!success){
-            var ErrorResponse = new{
-                Code = 404,
-                Error = "The requested task doesn't exist"
-            };
-            await SendAsync(ErrorResponse, cancellation: ct);
-            return;
+            ThrowError("The requested task doesn't exist", 404);
         }
 
-        await SendAsync("The task: "+ id +" has been sucesfully deleted");
-        return;
+        await SendAsync("The task: "+ id +" has been successfully deleted");
     }
 
 }

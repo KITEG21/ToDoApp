@@ -16,7 +16,7 @@ using TodoApp.Application.Services;
 using TodoApp.Domain.Validators;
 using TodoApp.Infrastructure.Database;
 using TodoApp.Infrastructure.Repositories;
-
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,7 +29,7 @@ Log.Logger = new LoggerConfiguration()
 builder.Host.UseSerilog();
 
 var jwtSettings = builder.Configuration.GetSection("Jwt");
-var key = Encoding.UTF8.GetBytes("ThisIsMySuperDeluxeDuperAmazingCuteUltraSecretKey");
+var key = Encoding.UTF8.GetBytes(jwtSettings["SecretKey"] ?? throw new InvalidOperationException("JWT SecretKey not configured"));
 
 builder.Services.AddAuthentication(options =>
 {
@@ -52,6 +52,7 @@ builder.Services.AddAuthentication(options =>
 });
 
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 builder.Services.AddAuthorization();
 builder.Services.AddFastEndpoints();
 builder.Services.AddValidatorsFromAssemblyContaining<TaskValidator>();
@@ -83,6 +84,12 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseFastEndpoints();
+
+if (app.Environment.IsDevelopment())
+{
+    app.MapSwagger("/openapi/{documentName}.json");
+    app.MapScalarApiReference();
+}
 
 app.Run();
 

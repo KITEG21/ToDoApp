@@ -23,9 +23,9 @@ public class AddTaskEndpoint : Endpoint<TaskDto, object>
     }
 
     public override void Configure(){
-        Post("/api/addTask");
+        Post("/api/task");
         Roles("User");
-        
+        Description(x => x.WithTags("Task"));
     }
 
     public override async Task HandleAsync(TaskDto req, CancellationToken ct)
@@ -34,26 +34,24 @@ public class AddTaskEndpoint : Endpoint<TaskDto, object>
         ValidationResult validationResult = validator.Validate(req);
 
         if(!validationResult.IsValid){
-            var ErrorResponse = new{
-                Error = 400,
-                Message = validationResult.Errors
-            };
-            await SendAsync(ErrorResponse, 400, ct);
+            await SendErrorsAsync(400, ct);
             return;
         }
         var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
         if(userIdClaim == null){
-            await SendUnauthorizedAsync(ct);
-            return;
+            ThrowError("Unauthorized", 401);
         }
 
         int userId = int.Parse(userIdClaim.Value);
         req.UserId = userId;
 
         TaskModel newTask = await _taskServices.CreateTask(req);
+        if(newTask == null)
+        {
+            ThrowError("Failed to create task", 400);
+        }
         newTask.TaskState = ETaskState.Pending;
         await SendAsync(newTask);
-        
     }
 
 
