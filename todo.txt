@@ -1,8 +1,0 @@
-1-Define models (Task)                                      X
-2-Set DB connection (postgresql-entityframework)            X
-3-Set endpoints for crud                                    X
-4-Set authorization                                         X
-5-Organize everything(repository, unit of work)             X
-6-Setting up real actions like(showing all tasks for each user)
-
-----worries for the moment

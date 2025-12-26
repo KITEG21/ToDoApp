@@ -195,3 +195,42 @@ HTTP: GET /scalar/{documentName?}
 2025-12-26 14:01:24.585 -05:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
 2025-12-26 14:01:24.586 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/openapi/v1.json - 200 null application/json;charset=utf-8 77.3709ms
 2025-12-26 14:01:48.292 -05:00 [INF] Application is shutting down...
+2025-12-26 14:16:43.795 -05:00 [INF] Registered 8 endpoints in 156 milliseconds.
+2025-12-26 14:16:43.844 -05:00 [INF] User profile is available. Using 'C:\Users\Usuario\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-26 14:16:43.916 -05:00 [INF] Now listening on: http://localhost:5041
+2025-12-26 14:16:43.918 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-26 14:16:43.918 -05:00 [INF] Hosting environment: Development
+2025-12-26 14:16:43.919 -05:00 [INF] Content root path: C:\Users\Usuario\ToDoApp\TodoApp.api
+2025-12-26 14:16:54.062 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/ - null null
+2025-12-26 14:16:54.087 -05:00 [WRN] Failed to determine the https port for redirect.
+2025-12-26 14:16:54.106 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/ - 404 0 null 44.5654ms
+2025-12-26 14:16:54.112 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5041/, Response status code: 404
+2025-12-26 14:16:57.621 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/swagger - null null
+2025-12-26 14:16:57.626 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/swagger - 404 0 null 4.5627ms
+2025-12-26 14:16:57.628 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5041/swagger, Response status code: 404
+2025-12-26 14:17:05.114 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar - null null
+2025-12-26 14:17:05.119 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 14:17:05.122 -05:00 [INF] Executing RedirectResult, redirecting to scalar/.
+2025-12-26 14:17:05.123 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 14:17:05.124 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar - 302 0 null 10.0641ms
+2025-12-26 14:17:05.126 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/ - null null
+2025-12-26 14:17:05.128 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 14:17:05.182 -05:00 [INF] Write content with HTTP Response ContentType of text/html
+2025-12-26 14:17:05.183 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2025-12-26 14:17:05.183 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/ - 200 622 text/html 56.9058ms
+2025-12-26 14:17:05.202 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/scalar.js - null null
+2025-12-26 14:17:05.202 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/scalar/scalar.aspnetcore.js - null null
+2025-12-26 14:17:05.203 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2025-12-26 14:17:05.205 -05:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-12-26 14:17:05.208 -05:00 [INF] Sending file with download name ''.
+2025-12-26 14:17:05.208 -05:00 [INF] Sending file with download name ''.
+2025-12-26 14:17:05.211 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2025-12-26 14:17:05.211 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 9.4752ms
+2025-12-26 14:17:05.217 -05:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2025-12-26 14:17:05.218 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/scalar/scalar.js - 200 939279 text/javascript 16.5912ms
+2025-12-26 14:17:05.421 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5041/openapi/v1.json - null null
+2025-12-26 14:17:05.423 -05:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-12-26 14:17:05.434 -05:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-12-26 14:17:05.495 -05:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2025-12-26 14:17:05.496 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5041/openapi/v1.json - 200 null application/json;charset=utf-8 75.2878ms
+2025-12-26 14:18:40.495 -05:00 [INF] Application is shutting down...
